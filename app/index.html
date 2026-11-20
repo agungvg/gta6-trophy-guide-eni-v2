@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunset Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="mast-inner">
+    <div class="brand">
+      <div class="mark">SL</div>
+      <div>
+        <h1>Sunset Ledger</h1>
+        <p class="sub">GTA VI · PlayStation 5 · 55 trophies · every step cited</p>
+      </div>
+    </div>
+    <div class="head-stats">
+      <div class="earned-big"><span id="earnedCount">0</span><span class="of">/ 55 earned</span></div>
+      <div class="bar"><div id="progressBar" class="fill" style="width:0%"></div></div>
+      <div class="grade-counts" id="gradeCounts">P 0/1 · G 0/2 · S 0/6 · B 0/46</div>
+      <div class="psn-points"><span id="psnPoints">0</span> / 1,350 PSN points</div>
+    </div>
+    <div class="head-actions">
+      <label class="spoiler-toggle"><input type="checkbox" id="spoilerToggle" checked> Spoiler shield</label>
+      <button id="exportBtn" type="button">Export</button>
+      <button id="importBtn" type="button">Import</button>
+      <input type="file" id="importFile" accept="application/json,.json" hidden>
+      <span class="saved-note">✓ Saved in<br>this browser</span>
+    </div>
+  </div>
+</header>
+
+<section class="audit" id="auditStrip" aria-label="Audit strip"></section>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" data-view="tracker" class="active">Tracker</button>
+  <button type="button" data-view="roadmap">Roadmap</button>
+  <button type="button" data-view="missables">Missables</button>
+  <button type="button" data-view="sources">Sources</button>
+</nav>
+
+<main id="view-tracker" class="view">
+  <div class="filters">
+    <div class="chips" id="kindChips"></div>
+    <div class="filter-row">
+      <div class="grade-chips" id="gradeChips"></div>
+      <select id="showSelect" aria-label="Show">
+        <option value="all">All trophies</option>
+        <option value="not-earned">Not earned</option>
+        <option value="earned">Earned</option>
+        <option value="missable">Missable / at risk</option>
+        <option value="hidden">PSN-hidden</option>
+      </select>
+      <select id="sortSelect" aria-label="Sort">
+        <option value="roadmap">Roadmap order</option>
+        <option value="name">Name A–Z</option>
+        <option value="grade">Grade (P → B)</option>
+      </select>
+      <input type="search" id="searchInput" placeholder="Search name, mission, keyword…" aria-label="Search trophies">
+    </div>
+  </div>
+  <div class="tracker-grid">
+    <aside class="trophy-list" id="trophyList" aria-label="Trophy list"></aside>
+    <section class="detail" id="detailPane" aria-label="Trophy guide"></section>
+    <aside class="side" id="sidePane" aria-label="Next up and sources"></aside>
+  </div>
+</main>
+
+<main id="view-roadmap" class="view" hidden>
+  <h2>Roadmap to the platinum <span class="h2-sub" id="roadmapSub"></span></h2>
+  <p class="lede" id="roadmapLede"></p>
+  <div class="stage-grid" id="stageGrid"></div>
+  <section class="watch">
+    <h3>Missable watch — the only trophy that can go wrong</h3>
+    <div id="watchBox"></div>
+  </section>
+</main>
+
+<main id="view-missables" class="view" hidden>
+  <h2>Missables &amp; at risk</h2>
+  <p class="lede">One trophy is possibly missable. Eight more are at risk only in the sense that their quest givers go quiet for a stretch of the story or their target respawns slowly — none of them can lock you out of the platinum.</p>
+  <div id="featuredMissable"></div>
+  <h3>At risk — 8 trophies to watch</h3>
+  <div class="risk-grid" id="riskGrid"></div>
+</main>
+
+<main id="view-sources" class="view" hidden>
+  <h2>Sources — every fact cited</h2>
+  <p class="lede">Each guide is written in our own words from the official description plus the sources below. Where a source says a fact is unconfirmed, we say so too instead of guessing. We played nothing; nothing here is presented as checked in-game unless the source says it was.</p>
+  <ol class="source-list" id="sourceList"></ol>
+  <div class="dispute-box" id="disputeBox"></div>
+</main>
+
+<footer>
+  <p>Sunset Ledger — an unofficial, open-source fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide uses no Rockstar logo, artwork or screenshots. Trophy names and descriptions are shown as PlayStation publishes them. Works fully offline; your progress never leaves this browser.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
